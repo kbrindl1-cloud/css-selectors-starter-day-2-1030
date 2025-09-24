@@ -51,10 +51,6 @@
     --filter-shadow-lg: drop-shadow(-6px 6px 10px var(--med-gray));
 }
 
-/* -------------------------------------- */
-/* ORGANIZING YOUR STYLES */
-/* -------------------------------------- */
-
 /* ------------------------------------ */
 /* GLOBAL CUSTOM STYLES */
 /* ------------------------------------ */
@@ -251,11 +247,15 @@ label {
     margin-top: 16px;
 }
 
-form span {
+/* Required asterisk spans */
+.asterisk, .required {
     font-size: 1.5rem;
     font-weight: bold;
     display: inline;
     color: var(--purple);
+}
+.asterisk:empty::after, .required:empty::after {
+    content: "*";
 }
 
 input[type=submit] {
@@ -325,6 +325,7 @@ input[type=submit]:focus {
     align-items: center;
 }
 
+/* 1st (outer) square */
 #more > div {
     width: 300px;
     height: 300px;
@@ -332,25 +333,29 @@ input[type=submit]:focus {
     margin: 16px auto;
 }
 
-#more div:nth-child(2) {
+/* 2nd */
+#more div div {
     width: 250px;
     height: 250px;
     background-color: var(--dv-orange);
 }
 
+/* 3rd */
 #more .third {
     width: 200px;
     height: 200px;
     background-color: var(--dv-yellow);
 }
 
-#more .fourth {
+/* 4th */
+#more div .fourth {
     width: 150px;
     height: 150px;
     background-color: var(--dv-mint);
 }
 
-#more .last {
+/* 5th */
+#more div .last {
     width: 100px;
     height: 100px;
     background-color: var(--dv-lt-blue);
@@ -427,6 +432,7 @@ tfoot {
     align-items: center;
 }
 
+/* 1st (outer) border box */
 #borders > div {
     width: 300px;
     height: 300px;
@@ -434,36 +440,40 @@ tfoot {
     border: 6px solid var(--red);
 }
 
-#borders div:nth-child(2) {
+/* 2nd */
+#borders div div {
     width: 250px;
     height: 250px;
     border: 6px dotted var(--dv-orange);
 }
 
+/* 3rd */
 #borders .third {
     width: 200px;
     height: 200px;
     border: 6px dashed var(--dv-yellow);
 }
 
-#borders .fourth {
+/* 4th */
+#borders div .fourth {
     width: 150px;
     height: 150px;
     border: 6px double var(--dv-mint);
 }
 
-#borders .last {
+/* 5th */
+#borders div .last {
     width: 100px;
     height: 100px;
     border: 6px inset var(--dv-lt-blue);
 }
 
 /* PSEUDO-ELEMENTS */
-#pseudo {
+#pseudo-elements {
     position: relative;
 }
 
-#pseudo div {
+#pseudo-elements div {
     width: 275px;
     height: 275px;
     margin: 56px auto 32px;
@@ -472,7 +482,7 @@ tfoot {
     z-index: 0;
 }
 
-#pseudo div::before {
+#pseudo-elements div::before {
     content: "\2730";
     padding: 12px 24px;
     border-radius: 50%;
@@ -486,7 +496,7 @@ tfoot {
     z-index: -1;
 }
 
-#pseudo img {
+#pseudo-elements img {
     width: 200px;
     height: 200px;
     margin: 0 auto;
